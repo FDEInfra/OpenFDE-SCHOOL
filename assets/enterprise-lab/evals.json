@@ -1,0 +1,86 @@
+[
+  {
+    "id": "C001",
+    "expense_id": "E001",
+    "group": "direct",
+    "expected": "ready_for_review",
+    "expected_rule": "within_limit"
+  },
+  {
+    "id": "C002",
+    "expense_id": "E002",
+    "group": "direct",
+    "expected": "ready_for_review",
+    "expected_rule": "within_limit"
+  },
+  {
+    "id": "C003",
+    "expense_id": "E003",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "over_limit"
+  },
+  {
+    "id": "C004",
+    "expense_id": "E004",
+    "group": "clarify",
+    "expected": "needs_info",
+    "expected_rule": "missing_receipt"
+  },
+  {
+    "id": "C005",
+    "expense_id": "E005",
+    "group": "clarify",
+    "expected": "needs_info",
+    "expected_rule": "missing_cost_center"
+  },
+  {
+    "id": "C006",
+    "expense_id": "E006",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "duplicate_receipt"
+  },
+  {
+    "id": "C007",
+    "expense_id": "E007",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "duplicate_receipt"
+  },
+  {
+    "id": "C008",
+    "expense_id": "E008",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "unknown_category"
+  },
+  {
+    "id": "C009",
+    "expense_id": "E009",
+    "group": "cannot_process",
+    "expected": "error",
+    "expected_rule": "invalid_amount"
+  },
+  {
+    "id": "C010",
+    "expense_id": "E010",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "exception_needs_owner"
+  },
+  {
+    "id": "C011",
+    "expense_id": "E011",
+    "group": "direct",
+    "expected": "ready_for_review",
+    "expected_rule": "within_limit"
+  },
+  {
+    "id": "C012",
+    "expense_id": "E012",
+    "group": "partial",
+    "expected": "manual_review",
+    "expected_rule": "over_limit"
+  }
+]

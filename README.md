@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/Alan-Youngzhe/OpenFDE-School/stargazers"><img src="https://img.shields.io/github/stars/Alan-Youngzhe/OpenFDE-School?style=flat-square" alt="stars"></a>
-  <img src="https://img.shields.io/badge/version-0.1.0%20alpha-orange?style=flat-square" alt="version">
+  <img src="https://img.shields.io/badge/version-0.2.0%20alpha-orange?style=flat-square" alt="version">
   <img src="https://img.shields.io/badge/Claude%20Code-skill-000?style=flat-square&logo=anthropic&logoColor=white" alt="claude code skill">
   <img src="https://img.shields.io/badge/courses-7-blue?style=flat-square" alt="7 courses">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0%20%2B%20MIT-green?style=flat-square" alt="license"></a>
@@ -16,7 +16,7 @@
 
 ## 理念
 
-- **全选修**——编号对应共学营课次，是稳定 ID，不代表必修顺序；按你的目标选课
+- **全选修**——按你的目标选课；①–⑤、⑦沿用资料课次，⑧为加餐课的目录编号，不代表必修顺序
 - **真实操**——每节课都有真实实验和可检查的产物：观察记录、SOW、Skill、评估集，不接受"Agent 说完成就算完成"
 - **学完有证据**——本地学习存档记录每个节点的完成证据、未验证项和下一步
 - **随时打断**——学生随时可以提问，答完回到主线
@@ -25,17 +25,17 @@
 
 | ID | 课程 | 内容 | 状态 |
 |---|---|---|---|
-| ① `fde-landscape` | FDE 全景与企业需求挖掘 | 从 Palantir 到 OpenAI，五方玩家全景，需求热力图 | alpha |
-| ② `scope-cli-prototype` | 项目范围界定、CLI 开发工作流与首个原型 | 写出能签字的 SOW，用 CLI 跑通首个原型 | beta |
-| ③ `skills-in-enterprise` | Skills 的企业实践 | 把企业最佳实践沉淀成可复用的 Skill | beta |
-| ④ `cli-enterprise-integration` | CLI 打通企业内部系统 | 让 Agent 接上真实企业系统完成读写 | beta |
-| ⑤ `evals-to-production` | Evals 与从 Demo 到企业生产 | 评估集先行，从 Demo 走到生产级 | beta |
-| ⑦ `demoday` | 结营与优秀项目 Demo Day | 5 个真实学员项目与评委点评，校准完成标准 | beta |
-| ⑧ `fde-career` | 加餐：FDE 求职、作品集与创业路径 | 简历四信号、真假 FDE 岗鉴别、独立 FDE 商业模式 | beta |
+| ① `fde-landscape` | FDE 全景与企业需求挖掘 | 从 Palantir 到 OpenAI，五方玩家全景，需求热力图 | 课节完整 |
+| ② `scope-cli-prototype` | 项目范围界定、CLI 开发工作流与首个原型 | 写出能签字的 SOW，用 CLI 跑通首个原型 | 课节完整 |
+| ③ `skills-in-enterprise` | Skills 的企业实践 | 把企业最佳实践沉淀成可复用的 Skill | 课节完整 |
+| ④ `cli-enterprise-integration` | CLI 打通企业内部系统 | API/CLI/MCP 选型，读写、校验与恢复 | 课节完整 |
+| ⑤ `evals-to-production` | Evals 与从 Demo 到企业生产 | 评测、故障定位与生产发布门槛 | 课节完整 |
+| ⑦ `demoday` | 结营与优秀项目 Demo Day | 5 个真实学员项目与评委点评，校准完成标准 | 课节完整 |
+| ⑧ `fde-career` | 加餐：FDE 求职、作品集与创业路径 | 简历四信号、岗位职责辨别、独立交付模式 | 课节完整 |
 
 ## 怎么开始
 
-先用 CC Quick Installer 安装并验证 Claude Code，再安装 OpenFDE School。装好之后它就是 Claude Code 里的一个命令：**`/fde`**。不需要记住仓库地址，也不需要打开任何文件。
+先安装并验证 Claude Code，再安装 OpenFDE School。装好之后它就是 Claude Code 里的一个命令：**`/fde`**。不需要记住仓库地址，也不需要打开任何文件。
 
 ## 下次怎么继续上课
 
@@ -80,7 +80,7 @@ curl -fsSL https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/s
 irm https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/scripts/install.ps1 | iex
 ```
 
-只从本仓库官方地址运行脚本；想先检查内容时，打开对应脚本链接阅读后再执行。安装器不会覆盖本地修改：目标目录不是 Git 仓库或存在未提交变化时会停止。
+只从本仓库官方地址运行脚本；想先检查内容时，打开对应脚本链接阅读后再执行。安装器遇到非 Git 目录、不同来源的仓库或未提交变化时会停止；更新只接受快进合并。本地解压包可作为 `fde` 文件夹放入 `~/.claude/skills/`，已有目录应先备份、比对后合并。解压包没有 Git 历史，后续不能直接运行 Git 更新。
 
 ### 验证并入学
 
@@ -88,6 +88,33 @@ irm https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/scripts/
 2. 输入 `/fde`，或直接说"带我学 FDE"；
 3. 确认导师展示课程目录、并问你一两句你是做什么的，而不是只回答一段通用 FDE 介绍；
 4. 更新时重复运行同一个安装命令，再检查 `manifest.json` 版本。
+
+## 本地校验
+
+在仓库目录运行以下命令（需要 Python 3.9 或更高版本）：
+
+```bash
+python3 scripts/validate_school.py
+python3 scripts/validate_wall.py
+python3 scripts/validate_lab.py
+```
+
+校验覆盖文件清单、相对资源链接、课程到课节的路由、原始逐字稿文件与常见密钥模式、学员墙结构，以及实验的规则、认证、写入与幂等行为。内容发布前仍需人工核对授权、匿名化与事实来源。
+
+## 配套实操
+
+第②–⑤课共用 [本地模拟企业实验](references/lab-guide.md)：12 条虚构报销数据、离线规则评测、本机 HTTP API、CLI、受控写回和 Skill 示例。无第三方依赖、无需企业账号、不调用付费模型。需要 Python 3.9+；自动化验证还需要允许本机端口。
+
+从仓库根目录运行：
+
+```bash
+python3 assets/enterprise-lab/lab.py init --workspace work/expense-demo
+python3 assets/enterprise-lab/lab.py eval --workspace work/expense-demo --output work/current.json
+```
+
+其余读写和故障步骤见实验指南。没有运行条件可按课节完成纸面演练，但实际接入与自动调用必须保留为未验证。
+
+完整主题对应见 [课程覆盖与产物](references/coverage.md)。
 
 ## 学员墙
 
@@ -108,12 +135,18 @@ references/
   courses/          7 门课程的教案
   lessons/          各课程的具体课节与实验
   lessons/shared/   安全与证据卡等共享节点
+  lab-guide.md      共享实验、运行命令与故障定位
+  coverage.md       原课主题与完整课节的对应关系
+assets/
+  enterprise-lab/   本地模拟 API、CLI、规则与评测数据
+  expense-precheck-lab/  配套 Skill 示例
+  templates/        SOW、SPEC、移交、作品与评审样例
 WALL.md             学员墙
 ```
 
 ## 状态
 
-Alpha (v0.1.0)。第 ① 门课已完成 lesson 化，其余课程为可教大纲（beta），持续迭代中，欢迎 Issue 和 PR。
+Alpha (v0.2.0)。7 门课程共 43 个完整课节，含讲授、实操、验收与降级路径。另提供 2 个共享节点、本地模拟企业实验与 5 份项目样例。Alpha 表示产品仍处于早期使用验证；课程训练完成不等于真实企业部署、教学效果或职业能力已经获得外部验证。
 
 ## 许可
 

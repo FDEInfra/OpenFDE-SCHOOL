@@ -12,6 +12,13 @@ $Target = if ($env:OPENFDE_SCHOOL_DIR) {
     Join-Path $HOME ".claude\skills\fde"
 }
 
+function Normalize-Repo([string]$Value) {
+    $Value = $Value.TrimEnd('/') -replace '\.git$', ''
+    $Value = $Value -replace '^git@github\.com:', 'https://github.com/'
+    $Value = $Value -replace '^ssh://git@github\.com/', 'https://github.com/'
+    return $Value
+}
+
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     Write-Error "OpenFDE School needs Git. Open Claude Code and ask: 帮我检查并安装 Git，安装后运行 git --version 验证。"
 }
@@ -23,6 +30,11 @@ if (-not (Test-Path $Target)) {
     & git clone --depth 1 $Repo $Target
     if ($LASTEXITCODE -ne 0) { throw "git clone failed" }
 } elseif (Test-Path (Join-Path $Target ".git")) {
+    $ActualRepo = & git -C $Target remote get-url origin
+    if ($LASTEXITCODE -ne 0) { throw "Cannot read target repository origin" }
+    if ((Normalize-Repo $ActualRepo) -ne (Normalize-Repo $Repo)) {
+        throw "Target belongs to a different repository; refusing to update: $Target"
+    }
     $Dirty = & git -C $Target status --porcelain
     if ($LASTEXITCODE -ne 0) { throw "git status failed" }
     if ($Dirty) {
@@ -38,10 +50,13 @@ if (-not (Test-Path (Join-Path $Target "SKILL.md"))) {
     throw "Install verification failed: SKILL.md is missing"
 }
 
-$Python = Get-Command python -ErrorAction SilentlyContinue
+$Python = Get-Command python3 -ErrorAction SilentlyContinue
+if (-not $Python) { $Python = Get-Command python -ErrorAction SilentlyContinue }
 if ($Python) {
-    & python (Join-Path $Target "scripts\validate_school.py")
+    & $Python.Source (Join-Path $Target "scripts\validate_school.py")
     if ($LASTEXITCODE -ne 0) { throw "OpenFDE School validation failed" }
+} else {
+    Write-Warning "Python 3 was not found; package validation was skipped."
 }
 
 Write-Host ""

@@ -17,9 +17,9 @@
 
 ## 引用到的事实与工具
 
-- Palantir（2003 年成立，创建 FDE 角色）：<https://www.palantir.com/>
-- OpenAI Deployment Company / Anthropic Applied AI：以两家公司官网与公开报道为准，课堂上现场查证；
-- MCP（Model Context Protocol，2024 年 11 月发布）：<https://modelcontextprotocol.io/>
+- Palantir 公司历史（2003 年成立）：<https://www.palantir.com/about/>
+- OpenAI FDE 官方岗位说明：<https://openai.com/careers/forward-deployed-engineer-%28fde%29-sf-san-francisco/>。岗位随时可能关闭，学习时重新检索官方招聘页；
+- MCP（Model Context Protocol，2024 年 11 月 25 日发布）：[Anthropic 发布说明](https://www.anthropic.com/news/model-context-protocol)；协议网站：<https://modelcontextprotocol.io/>
 - Cherry Studio：<https://github.com/CherryHQ/cherry-studio>
 - 连连 AI、观猹：以各自官网与社区页面为准。
 
@@ -29,3 +29,16 @@
 - 讲师观点归属讲师本人；本校做蒸馏，错了由本校修正并记录。
 - 未经真实项目验证的做法标为建议或实验，不写成成功案例。
 - 真实客户内容必须脱敏并取得必要授权。
+
+## 课程编号与来源口径
+
+现有资料为第 1–5 课、第 7 课和加餐课。Demo Day 中回顾过第六天的录播安排，因此不从“缺少第 6 课文件”推断共学营没有第六天课程。⑧ 仅为本校加餐课的目录编号。
+
+人物身份、案例数据与现场效果按讲师授课时的介绍呈现；未独立复核的数字属于案例自述，不能直接用作当前市场统计、产品保证或上线标准。字幕有识别疑点的人名就近标明。第 1 课的公司成立年份、MCP 发布日期与岗位职责另附官方来源；招聘状态须在学习当日复核。
+
+## 技术规范与教学配套
+
+- Agent Skills 格式：<https://agentskills.io/specification>；官方示例仓库：<https://github.com/anthropics/skills>。具体客户端的发现与加载方式另查其当前文档。
+- MCP 工具发现与调用：<https://modelcontextprotocol.io/specification/2025-06-18/server/tools>。正文引用这个明确版本说明工具层关系，不据此推断所有客户端都会常驻全部工具。
+- 本地报销数据、规则、API/CLI、故障基线、评测集、项目样例与评审量表均为本校教学设计，不是逐字稿原件或讲师产品的复制。数字只描述虚构实验。
+- 技术实践可以在不安装任何商业平台的情况下完成；真实模型调用、账号认证、生产部署与学习效果需另行验证。

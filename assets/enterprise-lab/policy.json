@@ -1,0 +1,9 @@
+{
+  "version": "training-1",
+  "currency": "CNY",
+  "limits_cents": {
+    "lodging": 50000,
+    "meal": 10000
+  },
+  "authority": "模拟制度：仅供预审训练，不构成财务制度或付款许可。"
+}
