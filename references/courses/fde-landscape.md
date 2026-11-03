@@ -10,9 +10,9 @@
 
 ## 讲师与嘉宾
 
-- **曹其睿**：万观无隅 FDE team 创始人，OpenFDE mentor，Cherry Studio FDE 顾问，前微软中国云计算大客户经理 [00:02:22]
-- **Michael**：Cherry Studio 产品方负责人，演示两个真实交付案例 [01:03:26]
-- **杨翰钦**：连连 AI 创始人，前大厂 AI 产品经理，北大/复旦就读背景，文科生转型 [01:17:41]
+- **曹其睿**：万观无隅 FDE team 创始人，OpenFDE mentor，Cherry Studio FDE 顾问，前微软中国云计算大客户经理
+- **Michael**：Cherry Studio 产品方负责人，演示两个真实交付案例
+- **杨翰钦**：连连 AI 创始人，前大厂 AI 产品经理，北大/复旦就读背景，文科生转型
 
 ## 固定的是判断框架，不是案例
 

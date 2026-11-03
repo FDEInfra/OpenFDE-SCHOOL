@@ -95,7 +95,7 @@ irm https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/scripts/
 
 ## 与共学营的关系
 
-本校是共学营内容的**学习化蒸馏**，不是替代。共学营的小作业、大作业、评选、奖品与面试直通属于当期活动机制；本校把作业要求保留为练习设计，不承诺证书或奖品。想获得完整体验，请到[官网课程页](https://openfde.net/zh/resources/guancha-fde)观看原视频——课程里的时间戳锚点方便你随时对照。
+本校是共学营内容的**学习化蒸馏**，不是替代。共学营的小作业、大作业、评选、奖品与面试直通属于当期活动机制；本校把作业要求保留为练习设计，不承诺证书或奖品。想获得完整体验，请到[官网课程页](https://openfde.net/zh/resources/guancha-fde)观看原视频。
 
 ## 项目结构
 
