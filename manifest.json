@@ -1,6 +1,6 @@
 {
   "name": "openfde-school",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "alpha",
   "source": "https://github.com/Alan-Youngzhe/OpenFDE-School",
   "files": [
@@ -35,6 +35,7 @@
     "references/courses/skills-in-enterprise.md",
     "references/coverage.md",
     "references/lab-guide.md",
+    "references/learning-flow-checks.md",
     "references/lessons/cli-enterprise-integration/01-why-cli-not-mcp.md",
     "references/lessons/cli-enterprise-integration/02-auth-and-read.md",
     "references/lessons/cli-enterprise-integration/03-write-validation-idempotency.md",

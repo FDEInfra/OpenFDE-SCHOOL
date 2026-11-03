@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/Alan-Youngzhe/OpenFDE-School/stargazers"><img src="https://img.shields.io/github/stars/Alan-Youngzhe/OpenFDE-School?style=flat-square" alt="stars"></a>
-  <img src="https://img.shields.io/badge/version-0.2.0%20alpha-orange?style=flat-square" alt="version">
+  <img src="https://img.shields.io/badge/version-0.2.1%20alpha-orange?style=flat-square" alt="version">
   <img src="https://img.shields.io/badge/Claude%20Code-skill-000?style=flat-square&logo=anthropic&logoColor=white" alt="claude code skill">
   <img src="https://img.shields.io/badge/courses-7-blue?style=flat-square" alt="7 courses">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0%20%2B%20MIT-green?style=flat-square" alt="license"></a>
@@ -82,6 +82,24 @@ irm https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/scripts/
 
 只从本仓库官方地址运行脚本；想先检查内容时，打开对应脚本链接阅读后再执行。安装器遇到非 Git 目录、不同来源的仓库或未提交变化时会停止；更新只接受快进合并。本地解压包可作为 `fde` 文件夹放入 `~/.claude/skills/`，已有目录应先备份、比对后合并。解压包没有 Git 历史，后续不能直接运行 Git 更新。
 
+### 在 Codex 中使用
+
+将技能安装到 `~/.agents/skills/fde`（个人使用），或项目的 `.agents/skills/fde`。也可以把下面要求交给 Codex 执行：
+
+```text
+把 https://github.com/Alan-Youngzhe/OpenFDE-School.git 安装到 ~/.agents/skills/fde。
+已有目录时先检查来源与本地改动，只有同源且干净的 Git 仓库才执行 git pull --ff-only，不覆盖已有文件。
+运行 python3 ~/.agents/skills/fde/scripts/validate_school.py 验证。
+```
+
+在 Codex 中输入 `$fde`，或 `$fde 我选第③门`。Claude Code 继续使用 `/fde`。两种入口共用课程与进度规则。
+
+### 学习目录与续学
+
+课程文件保留在技能安装目录，练习放在自己的项目目录；存档记录项目位置与产物的绝对路径。换目录开启新会话时，导师应读取原练习，接着未完成动作继续。旧存档若缺少原项目路径，导师会先请求定位，保留已有证据。
+
+需要独立存档时，可明确告诉导师本次使用的目录，或设置 `OPENFDE_SCHOOL_STATE_DIR`；未指定时仍使用 `~/.openfde-school/`。
+
 ### 验证并入学
 
 1. 新开一个 Claude Code 会话（已经开着的会话不会识别新装的命令）；
@@ -100,6 +118,8 @@ python3 scripts/validate_lab.py
 ```
 
 校验覆盖文件清单、相对资源链接、课程到课节的路由、原始逐字稿文件与常见密钥模式、学员墙结构，以及实验的规则、认证、写入与幂等行为。内容发布前仍需人工核对授权、匿名化与事实来源。
+
+导师行为另按 [入学、选课与续学验证](references/learning-flow-checks.md) 实测，包含新会话、换目录及旧存档恢复；这类模型会话不在普通离线 CI 中自动运行。
 
 ## 配套实操
 
@@ -146,7 +166,7 @@ WALL.md             学员墙
 
 ## 状态
 
-Alpha (v0.2.0)。7 门课程共 43 个完整课节，含讲授、实操、验收与降级路径。另提供 2 个共享节点、本地模拟企业实验与 5 份项目样例。Alpha 表示产品仍处于早期使用验证；课程训练完成不等于真实企业部署、教学效果或职业能力已经获得外部验证。
+Alpha (v0.2.1)。7 门课程共 43 个完整课节，含讲授、实操、验收与降级路径。另提供 2 个共享节点、本地模拟企业实验与 5 份项目样例。Alpha 表示产品仍处于早期使用验证；课程训练完成不等于真实企业部署、教学效果或职业能力已经获得外部验证。
 
 ## 许可
 

@@ -38,6 +38,7 @@
 
 ## 技术规范与教学配套
 
+- Codex 技能发现与安装位置：[官方技能文档](https://learn.chatgpt.com/docs/build-skills)；真实会话采集方式：[非交互运行文档](https://learn.chatgpt.com/docs/non-interactive-mode)。
 - Agent Skills 格式：<https://agentskills.io/specification>；官方示例仓库：<https://github.com/anthropics/skills>。具体客户端的发现与加载方式另查其当前文档。
 - MCP 工具发现与调用：<https://modelcontextprotocol.io/specification/2025-06-18/server/tools>。正文引用这个明确版本说明工具层关系，不据此推断所有客户端都会常驻全部工具。
 - 本地报销数据、规则、API/CLI、故障基线、评测集、项目样例与评审量表均为本校教学设计，不是逐字稿原件或讲师产品的复制。数字只描述虚构实验。
