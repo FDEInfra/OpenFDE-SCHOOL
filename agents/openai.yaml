@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenFDE School"
+  short_description: "由 Agent 带学，从行业全景到一次可验收的企业 AI 交付"
+  default_prompt: "Use $fde to show me the course catalog and guide me through one practical lesson."
