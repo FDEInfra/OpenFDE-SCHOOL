@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+  <title id="title">OpenFDE School — From the field to real delivery</title>
+  <desc id="desc">An agent-guided FDE school. 7 elective courses and 43 lessons, with hands-on work and verifiable evidence. Start with /fde in Claude Code or $fde in Codex.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#d6d0c4" stroke-width=".6"/></pattern>
+  </defs>
+  <rect width="1280" height="520" rx="16" fill="#f4f0e6"/>
+  <rect x="744" width="536" height="520" rx="16" fill="url(#grid)"/>
+  <path d="M744 0V520" stroke="#d6d0c4"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif">
+    <g transform="translate(48 40)">
+      <rect width="36" height="36" rx="7" fill="#eb5428"/>
+      <path d="M10 26V10H26M10 18H23M18 26V18" fill="none" stroke="#fffaf0" stroke-width="3.5"/>
+      <text x="50" y="24" fill="#252820" font-size="14" font-weight="700" letter-spacing="2">FDEINFRA / LEARN BY SHIPPING</text>
+    </g>
+    <text x="44" y="179" font-size="88" font-weight="900" letter-spacing="-5" fill="#252820">OPENFDE</text>
+    <text x="44" y="270" font-size="88" font-weight="900" letter-spacing="-4" fill="#eb5428">SCHOOL<tspan font-size="25" baseline-shift="super" letter-spacing="0"> ↗</tspan></text>
+    <text x="49" y="333" fill="#252820" font-size="30" font-weight="600">From the field to real delivery.</text>
+    <text x="49" y="372" fill="#676b5e" font-size="17">An FDE school taught by your AI agent.</text>
+    <path d="M49 416H687" stroke="#d6d0c4"/>
+    <text x="49" y="463" font-size="25" font-weight="750" fill="#252820">7<tspan dx="6" font-size="14" font-weight="400" fill="#676b5e"> elective courses</tspan></text>
+    <text x="243" y="463" font-size="25" font-weight="750" fill="#252820">43<tspan dx="6" font-size="14" font-weight="400" fill="#676b5e"> lessons</tspan></text>
+    <text x="464" y="463" font-size="25" font-weight="750" fill="#252820">1<tspan dx="6" font-size="14" font-weight="400" fill="#676b5e"> delivery cycle</tspan></text>
+    <rect x="795" y="72" width="430" height="372" rx="12" fill="#d6d0c4"/>
+    <rect x="787" y="64" width="430" height="372" rx="12" fill="#fffdf7" stroke="#c9c3b5"/>
+    <path d="M787 112H1217" stroke="#d6d0c4"/>
+    <circle cx="810" cy="88" r="4" fill="#eb5428"/>
+    <circle cx="826" cy="88" r="4" fill="#c9c3b5"/>
+    <circle cx="842" cy="88" r="4" fill="#c9c3b5"/>
+    <text x="1189" y="92" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#676b5e">YOUR CLASSROOM</text>
+    <text x="815" y="163" fill="#eb5428" font-family="ui-monospace,'SFMono-Regular',Consolas,monospace" font-size="28" font-weight="700">&gt; /fde<tspan fill="#b5b5a6"> ▌</tspan></text>
+    <text x="815" y="198" font-size="13" fill="#676b5e">Claude Code · /fde     Codex · $fde</text>
+    <path d="M815 222H1189" stroke="#e6e1d6"/>
+    <text x="815" y="256" font-size="17" fill="#252820" font-weight="600">Build something real today.</text>
+    <rect x="815" y="279" width="82" height="30" rx="5" fill="#f4f0e6"/>
+    <rect x="907" y="279" width="110" height="30" rx="5" fill="#f4f0e6"/>
+    <rect x="1027" y="279" width="162" height="30" rx="5" fill="#f4f0e6"/>
+    <text x="856" y="299" text-anchor="middle" font-size="12" fill="#676b5e">Observe</text>
+    <text x="962" y="299" text-anchor="middle" font-size="12" fill="#676b5e">Prototype</text>
+    <text x="1108" y="299" text-anchor="middle" font-size="12" fill="#676b5e">Verify with evidence</text>
+    <path d="M815 344H1189" stroke="#e6e1d6"/>
+    <circle cx="821" cy="378" r="5" fill="#728263"/>
+    <text x="837" y="383" font-size="13" fill="#676b5e">Your goals · Your questions · Your next step</text>
+    <text x="1199" y="479" text-anchor="end" font-size="11" fill="#797b6f" letter-spacing="1.5">FIELD NOTES BECOME CAPABILITY.</text>
+  </g>
+</svg>

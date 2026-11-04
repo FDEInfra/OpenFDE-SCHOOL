@@ -1,3 +1,5 @@
+<p align="center"><strong>简体中文</strong> &nbsp; | &nbsp; <a href="README.en.md">English</a></p>
+
 <p align="center">
   <img src="assets/brand/school-cover.svg" width="100%" alt="OpenFDE School：从业务现场，到真实交付。7 门选修课，43 个完整课节，由 Agent 带你动手。">
 </p>
@@ -14,7 +16,18 @@
   <a href="CONTRIBUTING.md">参与共建</a>
 </p>
 
-<p align="center"><strong>v0.2.2 Alpha</strong> &nbsp; / &nbsp; Claude Code + Codex &nbsp; / &nbsp; 7 门课程 · 43 个课节</p>
+<p align="center">
+  <a href="manifest.json"><img src="https://img.shields.io/badge/Version-0.2.2_Alpha-EB5428?style=flat-square" alt="Version 0.2.2 Alpha"></a>
+  <a href="https://github.com/FDEInfra/OpenFDE-SCHOOL/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/FDEInfra/OpenFDE-SCHOOL/validate.yml?branch=main&amp;style=flat-square&amp;label=checks" alt="CI checks"></a>
+  <a href="references/lab-guide.md"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python 3.9 or later"></a>
+  <a href="https://github.com/FDEInfra/OpenFDE-SCHOOL/stargazers"><img src="https://img.shields.io/github/stars/FDEInfra/OpenFDE-SCHOOL?style=flat-square&amp;color=EB5428" alt="GitHub stars"></a>
+</p>
+<p align="center">
+  <a href="#开始上课"><img src="https://img.shields.io/badge/Claude_Code-Skill-252820?style=flat-square" alt="Claude Code skill"></a>
+  <a href="#开始上课"><img src="https://img.shields.io/badge/Codex-Skill-252820?style=flat-square" alt="Codex skill"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Content-CC_BY--NC--SA_4.0-676B5E?style=flat-square" alt="Content license: CC BY-NC-SA 4.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Code-MIT-676B5E?style=flat-square" alt="Code license: MIT"></a>
+</p>
 
 ---
 
@@ -31,7 +44,7 @@ FDE（Forward Deployed Engineer，前线部署工程师）走进客户的业务�
 
 ### 1 · 安装到你的工具
 
-需要 **Git、Python 3.9+**，以及已可用的 Claude Code 或 Codex。当前仓库为私有，安装和更新需要仓库访问权限；使用 GitHub CLI 时先完成 `gh auth login` 与 `gh auth setup-git`。
+需要 **Git、Python 3.9+**，以及已可用的 Claude Code 或 Codex。仓库公开，无需 GitHub 账号即可下载安装。
 
 把对应的一段话发给你的 Agent：
 
@@ -60,27 +73,23 @@ FDE（Forward Deployed Engineer，前线部署工程师）走进客户的业务�
 <details>
 <summary>手动安装与更新（macOS / Linux / Windows）</summary>
 
-已配置 GitHub 身份验证后，在 macOS / Linux 获取并运行安装器：
+macOS / Linux，一行安装到 Claude Code：
 
 ```bash
-gh api repos/FDEInfra/OpenFDE-SCHOOL/contents/scripts/install.sh \
-  -H 'Accept: application/vnd.github.raw+json' > /tmp/openfde-school-install.sh && \
-  bash /tmp/openfde-school-install.sh
+curl -fsSL https://raw.githubusercontent.com/FDEInfra/OpenFDE-SCHOOL/main/scripts/install.sh | bash
 ```
 
-默认安装到 `~/.claude/skills/fde`。Codex 用户将最后一行改为：
+默认安装到 `~/.claude/skills/fde`。Codex 用户使用：
 
 ```bash
-OPENFDE_SCHOOL_DIR="$HOME/.agents/skills/fde" bash /tmp/openfde-school-install.sh
+curl -fsSL https://raw.githubusercontent.com/FDEInfra/OpenFDE-SCHOOL/main/scripts/install.sh | OPENFDE_SCHOOL_DIR="$HOME/.agents/skills/fde" bash
 ```
 
 Windows PowerShell：
 
 ```powershell
-$Installer = gh api repos/FDEInfra/OpenFDE-SCHOOL/contents/scripts/install.ps1 -H 'Accept: application/vnd.github.raw+json'
-if ($LASTEXITCODE -ne 0) { throw '无法获取安装器，请检查 GitHub 登录和仓库权限。' }
 # Codex 用户先设置：$env:OPENFDE_SCHOOL_DIR = Join-Path $HOME '.agents\skills\fde'
-& ([scriptblock]::Create(($Installer -join "`n")))
+irm https://raw.githubusercontent.com/FDEInfra/OpenFDE-SCHOOL/main/scripts/install.ps1 | iex
 ```
 
 重复运行同一安装命令即可更新。安装器识别旧官方仓库，检查本地改动后迁移来源，更新只接受快进合并。遇到其它来源、非 Git 目录或本地改动时停止。使用已下载的 ZIP 时，将内容放入对应的 `fde` 目录；已有目录先备份、比对，ZIP 安装不支持 Git 更新。

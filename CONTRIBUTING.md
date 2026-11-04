@@ -1,5 +1,7 @@
 # 共建 OpenFDE School
 
+<p><strong>简体中文</strong> &nbsp; | &nbsp; <a href="CONTRIBUTING.en.md">English</a></p>
+
 欢迎补齐课程事实、改进练习、修复安装问题，也欢迎提交你的第一份学习证据。
 
 ## 从一个具体问题开始
