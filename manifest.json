@@ -1,8 +1,8 @@
 {
   "name": "openfde-school",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "status": "alpha",
-  "source": "https://github.com/Alan-Youngzhe/OpenFDE-School",
+  "source": "https://github.com/FDEInfra/OpenFDE-SCHOOL",
   "files": [
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/ISSUE_TEMPLATE/course-feedback.yml",
@@ -10,11 +10,13 @@
     ".github/pull_request_template.md",
     ".github/workflows/validate.yml",
     ".gitignore",
+    "CONTRIBUTING.md",
     "LICENSE",
     "README.md",
     "SKILL.md",
     "WALL.md",
     "agents/openai.yaml",
+    "assets/brand/school-cover.svg",
     "assets/enterprise-lab/evals.json",
     "assets/enterprise-lab/expenses.json",
     "assets/enterprise-lab/lab.py",
@@ -86,6 +88,7 @@
     "references/state-schema.md",
     "scripts/install.ps1",
     "scripts/install.sh",
+    "scripts/validate_install.py",
     "scripts/validate_lab.py",
     "scripts/validate_school.py",
     "scripts/validate_wall.py"

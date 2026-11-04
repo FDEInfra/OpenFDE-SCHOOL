@@ -1,5 +1,7 @@
 ## 这次改了什么
 
+共建标准见 [CONTRIBUTING.md](https://github.com/FDEInfra/OpenFDE-SCHOOL/blob/main/CONTRIBUTING.md)。
+
 -
 
 ## 为什么需要
@@ -11,6 +13,7 @@
 - [ ] `python3 scripts/validate_school.py`
 - [ ] `python3 scripts/validate_wall.py`
 - [ ] 修改配套实验时，已运行 `python3 scripts/validate_lab.py`
+- [ ] 修改安装器时，已运行 `python3 scripts/validate_install.py`
 - [ ] 我已记录其它真实命令、行为或截图：
 
 使用 GitHub 网页编辑、无法本地运行脚本时，可以让本 PR 的 GitHub Actions 代跑；不要在 CI 尚未通过时勾选对应项。

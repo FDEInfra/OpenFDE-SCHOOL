@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-repo="${OPENFDE_SCHOOL_REPO:-https://github.com/Alan-Youngzhe/OpenFDE-School.git}"
+repo="${OPENFDE_SCHOOL_REPO:-https://github.com/FDEInfra/OpenFDE-SCHOOL.git}"
 target="${OPENFDE_SCHOOL_DIR:-$HOME/.claude/skills/fde}"
 
 normalize_repo() {
@@ -26,15 +26,25 @@ if [ ! -e "$target" ]; then
   git clone --depth 1 "$repo" "$target"
 elif [ -e "$target/.git" ]; then
   actual_repo="$(git -C "$target" remote get-url origin)"
+  migrate_origin=false
   if [ "$(normalize_repo "$actual_repo")" != "$(normalize_repo "$repo")" ]; then
-    echo "Target belongs to a different repository; refusing to update: $target" >&2
-    exit 1
+    if [ "$(normalize_repo "$actual_repo")" = "https://github.com/Alan-Youngzhe/OpenFDE-School" ] &&
+       [ "$(normalize_repo "$repo")" = "https://github.com/FDEInfra/OpenFDE-SCHOOL" ]; then
+      migrate_origin=true
+    else
+      echo "Target belongs to a different repository; refusing to update: $target" >&2
+      exit 1
+    fi
   fi
   dirty="$(git -C "$target" status --porcelain)"
   if [ -n "$dirty" ]; then
     echo "Refusing to overwrite local changes in: $target" >&2
     echo "Ask Claude Code to review or commit those changes before updating." >&2
     exit 1
+  fi
+  if [ "$migrate_origin" = true ]; then
+    git -C "$target" remote set-url origin "$repo"
+    echo "Repository moved to FDEInfra/OpenFDE-SCHOOL. Updated origin."
   fi
   git -C "$target" pull --ff-only
 else

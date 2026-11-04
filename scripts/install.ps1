@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 $Repo = if ($env:OPENFDE_SCHOOL_REPO) {
     $env:OPENFDE_SCHOOL_REPO
 } else {
-    "https://github.com/Alan-Youngzhe/OpenFDE-School.git"
+    "https://github.com/FDEInfra/OpenFDE-SCHOOL.git"
 }
 
 $Target = if ($env:OPENFDE_SCHOOL_DIR) {
@@ -32,13 +32,24 @@ if (-not (Test-Path $Target)) {
 } elseif (Test-Path (Join-Path $Target ".git")) {
     $ActualRepo = & git -C $Target remote get-url origin
     if ($LASTEXITCODE -ne 0) { throw "Cannot read target repository origin" }
+    $MigrateOrigin = $false
     if ((Normalize-Repo $ActualRepo) -ne (Normalize-Repo $Repo)) {
-        throw "Target belongs to a different repository; refusing to update: $Target"
+        if ((Normalize-Repo $ActualRepo) -eq "https://github.com/Alan-Youngzhe/OpenFDE-School" -and
+            (Normalize-Repo $Repo) -eq "https://github.com/FDEInfra/OpenFDE-SCHOOL") {
+            $MigrateOrigin = $true
+        } else {
+            throw "Target belongs to a different repository; refusing to update: $Target"
+        }
     }
     $Dirty = & git -C $Target status --porcelain
     if ($LASTEXITCODE -ne 0) { throw "git status failed" }
     if ($Dirty) {
         throw "Refusing to overwrite local changes in $Target. Review or commit them before updating."
+    }
+    if ($MigrateOrigin) {
+        & git -C $Target remote set-url origin $Repo
+        if ($LASTEXITCODE -ne 0) { throw "Cannot update repository origin" }
+        Write-Host "Repository moved to FDEInfra/OpenFDE-SCHOOL. Updated origin."
     }
     & git -C $Target pull --ff-only
     if ($LASTEXITCODE -ne 0) { throw "git pull --ff-only failed" }

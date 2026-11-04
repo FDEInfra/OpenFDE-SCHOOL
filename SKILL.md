@@ -13,7 +13,7 @@ description: OpenFDE School——由 Agent 在主对话中带学的 FDE（Forwar
 
 先确定三种目录：课程资源相对于本 `SKILL.md` 所在的安装目录；学习产物相对于学生的项目目录；学习存档使用学生明确指定的目录（或 `OPENFDE_SCHOOL_STATE_DIR`），未指定时才用默认 `~/.openfde-school/`。不要把当前工作目录同时当成这三个目录。
 
-1. 读取 `manifest.json`；再以非阻塞方式获取 `https://raw.githubusercontent.com/Alan-Youngzhe/OpenFDE-School/main/manifest.json` 比较版本。远程检查失败时静默跳过；发现新版只提示一次，Alpha 阶段不自动覆盖本地文件。
+1. 读取 `manifest.json`；再以非阻塞方式检查 `FDEInfra/OpenFDE-SCHOOL` 的远程版本。已有 GitHub CLI 身份验证时，使用 `gh api repos/FDEInfra/OpenFDE-SCHOOL/contents/manifest.json -H 'Accept: application/vnd.github.raw+json'`；公开访问可用时也可读取 `https://raw.githubusercontent.com/FDEInfra/OpenFDE-SCHOOL/main/manifest.json`。远程检查失败时静默跳过；发现新版只提示一次，Alpha 阶段不自动覆盖本地文件。
 2. 列出 `~/.openfde-school/`；目录不存在时视为没有存档。第一次读取、创建或修复存档前读取 `references/state-schema.md`；损坏文件保留原样，多份存档由学生选择。
 3. 没有存档时，读取 `references/catalog.md`，向学生展示课程分组和状态；然后做一次简短开场，最多两个问题：他现在主要做什么工作或专业，以及他的目标偏向求职、接单还是理解这个行业。学生跳过就按通用方式讲，不追问。选课后在选定存档目录创建 `me.json`，把背景写入 `learner_profile`，并将学生项目的绝对路径保存到 `workspace_dir`；产物路径保存为绝对路径，写入后重新读取确认。
 4. 有背景记录时直接沿用，不重复开场。
